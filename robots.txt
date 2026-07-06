@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rimcode.ir/sitemap.xml
-
-# Block unnecessary files
-Disallow: /node_modules/
-Disallow: /*.log$
+Sitemap: https://rimcode-n8.github.io/Rimcode/sitemap.xml
