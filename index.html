@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="images/mylogo.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ریمکد | RimCode — آژانس دیجیتال مارکتینگ | We Code Your Growth</title>
+<meta name="description" content="ریمکد — آژانس دیجیتال مارکتینگ تمام‌خدمات. طراحی وب، اپلیکیشن، سئو، مدیریت اینستاگرام، تبلیغات و برندسازی. مازندران، ایران.">
+<meta name="keywords" content="آژانس دیجیتال مارکتینگ, طراحی سایت, سئو, مدیریت اینستاگرام, تبلیغات گوگل, ریمکد, RimCode">
+<meta name="author" content="RimCode | ریمکد">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rimcode.ir/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rimcode.ir/">
+<meta property="og:title" content="ریمکد | آژانس دیجیتال مارکتینگ تمام‌خدمات">
+<meta property="og:description" content="از ایده تا برند — طراحی، توسعه، مارکتینگ و رشد دیجیتال همه زیر یک سقف">
+<meta property="og:image" content="https://rimcode.ir/images/og-image.jpg">
+<meta property="og:locale" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Rimcode_dev">
+<meta name="twitter:title" content="ریمکد | آژانس دیجیتال مارکتینگ">
+<meta name="twitter:image" content="https://rimcode.ir/images/og-image.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"ریمکد | RimCode","url":"https://rimcode.ir","logo":"https://rimcode.ir/images/mylogo.png","telephone":"+989334095636","email":"rimcode.dev@gmail.com","sameAs":["https://github.com/rimcode-N8","https://x.com/Rimcode_dev","https://www.instagram.com/rimcode_dev"]}
+</script>
+<link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.003/fonts/web/Vazirmatn-FD.css" rel="stylesheet">
+<style>
+:root{
+  --bg:#060810;--surface:#0d1117;--surface2:#131820;
+  --orange:#f97316;--amber:#f59e0b;--orange2:#fb923c;
+  --glow:rgba(249,115,22,.22);
+  --white:#f8fafc;--text:#cbd5e1;--muted:#64748b;--dim:#334155;
+  --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.12);
+  --ease:cubic-bezier(0.34,1.56,0.64,1);--eout:cubic-bezier(0.4,0,0.2,1);
+  --r:1rem;--hdr:64px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Vazirmatn FD',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px}
+
+/* ── SCROLL PROGRESS ── */
+.scroll-progress{position:fixed;top:0;inset-inline:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--amber));transform-origin:left;transform:scaleX(0);z-index:9999;transition:transform .1s linear}
+
+/* ── CURSOR GLOW ── */
+#cglow{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.08) 0%,transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);will-change:left,top;transition:left .08s,top .08s}
+
+/* ── CANVAS (fixed bg) ── */
+#bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.7}
+
+/* ── GRID ── */
+.grid-lines{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(249,115,22,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(249,115,22,.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 20%,transparent 70%)}
+
+/* ── HEADER ── */
+.header{position:fixed;top:0;inset-inline:0;z-index:200;height:var(--hdr);background:rgba(6,8,16,.0);border-bottom:1px solid transparent;backdrop-filter:blur(0px);transition:background .4s,border-color .4s,backdrop-filter .4s}
+.header.scrolled{background:rgba(6,8,16,.9);border-bottom-color:var(--border);backdrop-filter:blur(24px)}
+.header-inner{max-width:1160px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:100%}
+.logo{display:flex;align-items:center;gap:.6rem;position:relative;z-index:1}
+.logo-img{width:40px;height:40px;object-fit:contain;transition:transform .4s var(--ease)}
+.logo-img:hover{transform:rotate(-5deg) scale(1.1)}
+.logo-text{font-weight:900;font-size:1rem;color:var(--white);letter-spacing:-.02em}
+.logo-text span{color:var(--orange)}
+.header-actions{display:flex;align-items:center;gap:.75rem;position:relative;z-index:1}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1.5rem;border-radius:999px;font-weight:700;font-size:.88rem;font-family:inherit;cursor:pointer;border:none;transition:transform .2s var(--ease),box-shadow .2s,opacity .2s;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,var(--orange),var(--amber));color:#fff;box-shadow:0 6px 20px rgba(249,115,22,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(249,115,22,.45)}
+.btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--border2)}
+.btn-ghost:hover{border-color:rgba(249,115,22,.35);color:var(--white);transform:translateY(-1px)}
+
+/* ── SR (scroll reveal) ── */
+.sr{opacity:0;transition:opacity .75s var(--eout),transform .75s var(--eout)}
+.sr-up{transform:translateY(32px)}
+.sr-scale{transform:scale(.94)}
+.sr-left{transform:translateX(-28px)}
+[data-d="1"]{transition-delay:.1s}[data-d="2"]{transition-delay:.2s}[data-d="3"]{transition-delay:.25s}[data-d="4"]{transition-delay:.35s}[data-d="5"]{transition-delay:.45s}
+.sr.in{opacity:1;transform:none!important}
+
+/* ── LAYOUT ── */
+.container{width:100%;max-width:1160px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:2}
+.section{padding:6rem 0;position:relative}
+.section-dark{background:rgba(255,255,255,.015)}
+.grad-text{background:linear-gradient(120deg,var(--orange),var(--amber),var(--orange2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);background:rgba(249,115,22,.07);border:1px solid rgba(249,115,22,.2);padding:.3rem .9rem;border-radius:999px;margin-bottom:1rem}
+.section-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:var(--white);letter-spacing:-.03em;line-height:1.15;margin-bottom:.6rem}
+.section-sub{color:var(--muted);font-size:.95rem;line-height:1.75;max-width:560px}
+
+/* ── HERO SECTION ── */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:calc(var(--hdr) + 4rem) 1.5rem 5rem;text-align:center;position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:orb-drift ease-in-out infinite alternate}
+.hero-orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(249,115,22,.13),transparent 70%);top:-15%;left:-5%;animation-duration:14s}
+.hero-orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(249,115,22,.08),transparent 70%);bottom:-10%;right:-5%;animation-duration:18s;animation-delay:-6s}
+@keyframes orb-drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,-50px) scale(1.06)}}
+
+.hero-content{position:relative;z-index:2;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:.55rem;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);background:rgba(249,115,22,.07);border:1px solid rgba(249,115,22,.2);padding:.38rem .95rem;border-radius:999px;margin-bottom:1.8rem}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:blink 2s ease-in-out infinite}
+.hero-title{font-size:clamp(3.5rem,12vw,9rem);font-weight:900;letter-spacing:-.055em;line-height:.9;margin-bottom:1.8rem}
+.hero-title .line1{display:block;color:var(--white)}
+.hero-title .line2{display:block;background:linear-gradient(120deg,var(--orange) 0%,var(--amber) 50%,var(--orange2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
+/* glitch */
+.hero-title .line2.glitch::before,.hero-title .line2.glitch::after{content:attr(data-text);position:absolute;top:0;right:0;background:linear-gradient(120deg,var(--orange),var(--amber),var(--orange2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-title .line2.glitch::before{animation:g1 .32s steps(2) forwards}
+.hero-title .line2.glitch::after{animation:g2 .32s steps(2) forwards}
+@keyframes g1{0%{clip-path:inset(0 0 90% 0);transform:translateX(-4px)}50%{clip-path:inset(40% 0 50% 0);transform:translateX(4px)}100%{clip-path:inset(80% 0 0 0);transform:translateX(0)}}
+@keyframes g2{0%{clip-path:inset(80% 0 0 0);transform:translateX(4px)}50%{clip-path:inset(20% 0 60% 0);transform:translateX(-4px)}100%{clip-path:inset(0 0 90% 0);transform:translateX(0)}}
+
+.hero-desc{font-size:clamp(1rem,1.8vw,1.15rem);color:var(--text);line-height:1.82;margin-bottom:2.2rem;max-width:620px;margin-inline:auto}
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:2.2rem}
+.hero-pill{font-size:.72rem;font-weight:600;padding:.32rem .85rem;border-radius:999px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.18);color:var(--orange);transition:background .2s,transform .2s}
+.hero-pill:hover{background:rgba(249,115,22,.14);transform:translateY(-2px)}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-bottom:3rem}
+.btn-enter{background:linear-gradient(135deg,var(--orange),var(--amber));color:#fff;font-size:.97rem;padding:.9rem 2.4rem;box-shadow:0 8px 28px var(--glow);animation:cta-pulse 3s 1.5s ease-in-out infinite}
+@keyframes cta-pulse{0%,100%{box-shadow:0 8px 28px var(--glow)}50%{box-shadow:0 8px 48px rgba(249,115,22,.45)}}
+.btn-enter:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 44px var(--glow)}
+/* ripple */
+.btn-enter .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.28);transform:scale(0);animation:ripple .6s linear forwards;pointer-events:none}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+
+/* Stats strip */
+.hero-stats{display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap}
+.hstat{text-align:center;padding:0 2rem}
+.hstat:first-child{padding-right:0}
+.hstat-num{font-size:2rem;font-weight:900;letter-spacing:-.04em;color:var(--orange);line-height:1}
+.hstat-label{font-size:.68rem;color:var(--muted);margin-top:.2rem}
+.hstat-sep{width:1px;height:36px;background:var(--border2);flex-shrink:0}
+
+/* Scroll hint */
+.scroll-hint{display:flex;flex-direction:column;align-items:center;gap:.45rem;font-size:.65rem;color:var(--dim);letter-spacing:.15em;text-transform:uppercase;margin-top:2.5rem}
+.scroll-line{width:1.5px;height:40px;background:linear-gradient(to bottom,var(--orange),transparent);animation:scroll-anim 2.2s ease-in-out infinite}
+@keyframes scroll-anim{0%{transform:scaleY(0);transform-origin:top;opacity:1}50%{transform:scaleY(1)}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom;opacity:.2}}
+
+/* ── MARQUEE ── */
+.marquee-section{padding:1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(255,255,255,.015);overflow:hidden;position:relative;z-index:2}
+.marquee-inner{display:flex;align-items:center;gap:2.5rem;white-space:nowrap;animation:marquee 28s linear infinite;width:max-content}
+.marquee-inner span{font-size:.85rem;color:var(--muted);font-weight:500}
+.marquee-inner .sep{color:var(--orange);font-size:.65rem}
+.marquee-section:hover .marquee-inner{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.svc-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--r);padding:1.6rem;transition:border-color .3s,transform .3s var(--ease),box-shadow .3s}
+.svc-card:hover{border-color:rgba(249,115,22,.28);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.svc-icon{font-size:1.6rem;margin-bottom:.8rem}
+.svc-card h3{font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.45rem}
+.svc-card p{font-size:.82rem;color:var(--muted);line-height:1.65}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.8rem}
+.svc-tag{font-size:.68rem;color:var(--dim);border:1px solid var(--border);padding:.18rem .55rem;border-radius:999px}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.why-item{display:flex;gap:1rem;align-items:flex-start;padding:1.4rem;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:var(--r);transition:border-color .3s}
+.why-item:hover{border-color:rgba(249,115,22,.2)}
+.why-icon{font-size:1.5rem;flex-shrink:0}
+.why-item h4{font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.3rem}
+.why-item p{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+/* ── STATS ── */
+.stats-banner{padding:5rem 0;background:linear-gradient(135deg,rgba(249,115,22,.05),rgba(249,115,22,.01));border-top:1px solid rgba(249,115,22,.08);border-bottom:1px solid rgba(249,115,22,.08);position:relative;overflow:hidden}
+.stats-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(249,115,22,.05),transparent 70%);pointer-events:none}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;position:relative;z-index:1}
+.stat-box{background:var(--surface);padding:2rem;text-align:center;border-right:1px solid var(--border)}
+.stat-box:last-child{border-right:none}
+.stat-num{font-size:clamp(2.5rem,4vw,4rem);font-weight:900;letter-spacing:-.05em;background:linear-gradient(135deg,var(--white),var(--text));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.stat-suf{font-size:clamp(1.2rem,2vw,2rem);font-weight:900;color:var(--orange)}
+.stat-label{font-size:.78rem;color:var(--muted);margin-top:.4rem}
+
+/* ── CTA ── */
+.cta-section{padding:6rem 0;text-align:center}
+.cta-inner{max-width:620px;margin:0 auto}
+.cta-inner h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:var(--white);letter-spacing:-.03em;margin-bottom:.8rem}
+.cta-inner p{color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:2.5rem}
+.cta-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+
+/* ── CONTACT STRIP ── */
+.contact-strip{padding:4rem 0;border-top:1px solid var(--border);background:var(--surface)}
+.contact-strip-inner{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.clink{display:flex;align-items:center;gap:.7rem;padding:.8rem 1.4rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--r);font-size:.85rem;color:var(--text);transition:border-color .2s,color .2s,transform .2s var(--ease)}
+.clink:hover{border-color:rgba(249,115,22,.3);color:var(--white);transform:translateY(-2px)}
+.clink-icon{font-size:1rem;flex-shrink:0}
+.clink small{display:block;font-size:.68rem;color:var(--muted)}
+
+/* ── FOOTER ── */
+.footer{background:rgba(0,0,0,.3);border-top:1px solid var(--border);padding:2rem 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.78rem;color:var(--dim)}
+.footer-tag{color:rgba(249,115,22,.4);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem}
+
+/* ── CURTAIN EXIT ── */
+.curtain{position:fixed;inset:0;z-index:9990;background:var(--bg);transform:translateY(-100%);pointer-events:none}
+.curtain.closing{animation:curtain-down .65s cubic-bezier(.76,0,.24,1) forwards}
+@keyframes curtain-down{from{transform:translateY(-100%)}to{transform:translateY(0)}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .stat-box:nth-child(2){border-right:none}
+  .stat-box:nth-child(3){border-right:1px solid var(--border)}
+  .stat-box:nth-child(3),.stat-box:nth-child(4){border-top:1px solid var(--border)}
+}
+@media(max-width:720px){
+  :root{--hdr:58px}
+  .hero-title{font-size:clamp(3rem,16vw,5.5rem)}
+  .hero-desc{font-size:.95rem}
+  .hero-actions{flex-direction:column;align-items:center}
+  .btn-enter,.hero-actions .btn{width:100%;max-width:320px;justify-content:center}
+  .hero-stats{gap:.5rem}
+  .hstat{padding:0 1rem}
+  .hstat-num{font-size:1.6rem}
+  .services-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .stat-box:nth-child(3){border-right:none}
+  .stat-box:nth-child(odd){border-right:1px solid var(--border)}
+  .cta-actions{flex-direction:column;align-items:center}
+  .cta-actions .btn{width:100%;max-width:320px;justify-content:center}
+  .contact-strip-inner{flex-direction:column;align-items:stretch}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .container{padding:0 1rem}
+  .section{padding:4.5rem 0}
+  .hero{padding-top:calc(var(--hdr) + 2.5rem)}
+  .hero-pills .hero-pill:nth-child(n+7){display:none}
+  .stats-row{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<!-- Cursor glow -->
+<div id="cglow"></div>
+<!-- Particle canvas -->
+<canvas id="bgCanvas"></canvas>
+<!-- Grid -->
+<div class="grid-lines"></div>
+<!-- Curtain exit -->
+<div class="curtain" id="curtain"></div>
+
+<!-- ══ HEADER ══ -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="images/mylogo.png" alt="RimCode" class="logo-img"
+           onerror="this.style.display='none'">
+    </a>
+    <div class="header-actions">
+      <a href="home.html" class="btn btn-ghost">ورود به سایت</a>
+      <a href="home.html#contact" class="btn btn-primary" id="btnCTA">مشاوره رایگان ←</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge sr sr-up">
+      <span class="badge-dot"></span>
+      آژانس دیجیتال تمام‌خدمات · rimcode.ir
+    </div>
+
+    <h1 class="hero-title sr sr-up" data-d="1">
+      <span class="line1">RIM</span>
+      <span class="line2" id="titleGrad" data-text="CODE">CODE</span>
+    </h1>
+
+    <p class="hero-desc sr sr-up" data-d="2">
+      از ایده تا برند — طراحی وب، اپلیکیشن، دیجیتال مارکتینگ،
+      مدیریت اینستاگرام، سئو، عکاسی، فیلم‌برداری و برندسازی.
+      همه زیر یک سقف، با یک شریک حرفه‌ای.
+    </p>
+
+    <div class="hero-pills sr sr-up" data-d="2">
+      <span class="hero-pill">🌐 طراحی وب</span>
+      <span class="hero-pill">📱 اپلیکیشن</span>
+      <span class="hero-pill">📈 دیجیتال مارکتینگ</span>
+      <span class="hero-pill">📸 اینستاگرام</span>
+      <span class="hero-pill">🔍 سئو</span>
+      <span class="hero-pill">🎬 فیلم‌برداری</span>
+      <span class="hero-pill">🎨 برندسازی</span>
+      <span class="hero-pill">🤖 هوش مصنوعی</span>
+    </div>
+
+    <div class="hero-actions sr sr-up" data-d="3">
+      <button class="btn btn-enter" id="btnEnter" style="position:relative;overflow:hidden">
+        ورود به سایت اصلی
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <a href="#services" class="btn btn-ghost">مشاهده خدمات ↓</a>
+    </div>
+
+    <div class="hero-stats sr sr-up" data-d="4">
+      <div class="hstat">
+        <div class="hstat-num" id="s1">0</div>
+        <div class="hstat-label">پروژه موفق</div>
+      </div>
+      <div class="hstat-sep"></div>
+      <div class="hstat">
+        <div class="hstat-num" id="s2">0</div>
+        <div class="hstat-label">رضایت مشتری</div>
+      </div>
+      <div class="hstat-sep"></div>
+      <div class="hstat">
+        <div class="hstat-num" id="s3">0</div>
+        <div class="hstat-label">سال تجربه</div>
+      </div>
+      <div class="hstat-sep"></div>
+      <div class="hstat">
+        <div class="hstat-num">۲۴/۷</div>
+        <div class="hstat-label">پشتیبانی</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint sr sr-up" data-d="5">
+      <div class="scroll-line"></div>
+      <span>اسکرول کنید</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ══ -->
+<div class="marquee-section">
+  <div class="marquee-inner">
+    <span>طراحی وب</span><span class="sep">✦</span>
+    <span>اپلیکیشن موبایل</span><span class="sep">✦</span>
+    <span>دیجیتال مارکتینگ</span><span class="sep">✦</span>
+    <span>مدیریت اینستاگرام</span><span class="sep">✦</span>
+    <span>سئو حرفه‌ای</span><span class="sep">✦</span>
+    <span>کمپین تبلیغاتی</span><span class="sep">✦</span>
+    <span>عکاسی و فیلم‌برداری</span><span class="sep">✦</span>
+    <span>برندسازی</span><span class="sep">✦</span>
+    <span>هوش مصنوعی</span><span class="sep">✦</span>
+    <span>طراحی وب</span><span class="sep">✦</span>
+    <span>اپلیکیشن موبایل</span><span class="sep">✦</span>
+    <span>دیجیتال مارکتینگ</span><span class="sep">✦</span>
+    <span>مدیریت اینستاگرام</span><span class="sep">✦</span>
+    <span>سئو حرفه‌ای</span><span class="sep">✦</span>
+    <span>کمپین تبلیغاتی</span><span class="sep">✦</span>
+    <span>عکاسی و فیلم‌برداری</span><span class="sep">✦</span>
+    <span>برندسازی</span><span class="sep">✦</span>
+    <span>هوش مصنوعی</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- ══ SERVICES ══ -->
+<section class="section section-dark" id="services">
+  <div class="container">
+    <div class="section-tag sr sr-up">خدمات ما</div>
+    <h2 class="section-title sr sr-up" data-d="1">همه چیز زیر یک سقف</h2>
+    <p class="section-sub sr sr-up" data-d="2">از اولین خط کد تا اولین فروش — ریمکد کنارتان است</p>
+    <div class="services-grid">
+      <div class="svc-card sr sr-up" data-d="1">
+        <div class="svc-icon">🌐</div>
+        <h3>طراحی و توسعه وب</h3>
+        <p>وب‌سایت سریع، امن و ریسپانسیو. از لندینگ پیج تا فروشگاه اینترنتی کامل.</p>
+        <div class="svc-tags"><span class="svc-tag">React</span><span class="svc-tag">Next.js</span><span class="svc-tag">WordPress</span></div>
+      </div>
+      <div class="svc-card sr sr-up" data-d="2">
+        <div class="svc-icon">📱</div>
+        <h3>اپلیکیشن موبایل</h3>
+        <p>اپلیکیشن iOS و Android با UX روان، عملکرد بالا و معماری مقیاس‌پذیر.</p>
+        <div class="svc-tags"><span class="svc-tag">React Native</span><span class="svc-tag">Flutter</span></div>
+      </div>
+      <div class="svc-card sr sr-up" data-d="3">
+        <div class="svc-icon">📸</div>
+        <h3>مدیریت اینستاگرام</h3>
+        <p>استراتژی، تولید محتوا، زمان‌بندی و تعامل با مخاطب. رشد واقعی فالوور.</p>
+        <div class="svc-tags"><span class="svc-tag">Instagram</span><span class="svc-tag">Reels</span><span class="svc-tag">Story</span></div>
+      </div>
+      <div class="svc-card sr sr-up" data-d="1">
+        <div class="svc-icon">📈</div>
+        <h3>دیجیتال مارکتینگ</h3>
+        <p>کمپین‌های هدفمند Google Ads و Meta Ads. نرخ تبدیل تا ۵ برابر بهتر.</p>
+        <div class="svc-tags"><span class="svc-tag">Google Ads</span><span class="svc-tag">Meta Ads</span></div>
+      </div>
+      <div class="svc-card sr sr-up" data-d="2">
+        <div class="svc-icon">🔍</div>
+        <h3>سئو حرفه‌ای</h3>
+        <p>صفحه اول گوگل با سئو فنی، محتوا و لینک‌سازی. رشد ارگانیک پایدار.</p>
+        <div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">Technical</span></div>
+      </div>
+      <div class="svc-card sr sr-up" data-d="3">
+        <div class="svc-icon">🎬</div>
+        <h3>عکاسی و فیلم‌برداری</h3>
+        <p>عکاسی محصول، پرسنلی و تیزر تبلیغاتی. تصویر حرفه‌ای که اعتماد می‌سازد.</p>
+        <div class="svc-tags"><span class="svc-tag">Product</span><span class="svc-tag">Teaser</span><span class="svc-tag">Reels</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="sr sr-up">
+      <a href="home.html#services" class="btn btn-ghost" style="font-size:.88rem">مشاهده همه ۱۲ خدمات ←</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag sr sr-up">چرا ریمکد؟</div>
+    <h2 class="section-title sr sr-up" data-d="1">تفاوت ریمکد با بقیه</h2>
+    <div class="why-grid">
+      <div class="why-item sr sr-up" data-d="1">
+        <div class="why-icon">⚡</div>
+        <div><h4>همه چیز زیر یک سقف</h4><p>دیگه نیازی نیست برای هر کار به جای جداگانه برگردی. از کد تا کمپین، همه اینجاست.</p></div>
+      </div>
+      <div class="why-item sr sr-up" data-d="2">
+        <div class="why-icon">📊</div>
+        <div><h4>نتیجه‌محور، نه فقط تحویل</h4><p>معیار موفقیت ما رشد کسب‌وکار توئه، نه فقط تحویل فایل. با داده کار می‌کنیم.</p></div>
+      </div>
+      <div class="why-item sr sr-up" data-d="1">
+        <div class="why-icon">🔒</div>
+        <div><h4>شفافیت کامل</h4><p>قرارداد شفاف، گزارش ماهانه، دسترسی کامل به ابزارها. هیچ چیز پنهانی نیست.</p></div>
+      </div>
+      <div class="why-item sr sr-up" data-d="2">
+        <div class="why-icon">🚀</div>
+        <div><h4>شروع سریع</h4><p>ظرف ۴۸ ساعت از اولین جلسه شروع می‌کنیم. هیچ پروژه‌ای معطل نمی‌ماند.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<section class="stats-banner">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-box sr sr-scale">
+        <div><span class="stat-num" id="st1">0</span><span class="stat-suf">+</span></div>
+        <div class="stat-label">پروژه موفق</div>
+      </div>
+      <div class="stat-box sr sr-scale" data-d="1">
+        <div><span class="stat-num" id="st2">0</span><span class="stat-suf">٪</span></div>
+        <div class="stat-label">رضایت مشتری</div>
+      </div>
+      <div class="stat-box sr sr-scale" data-d="2">
+        <div><span class="stat-num" id="st3">0</span><span class="stat-suf">×</span></div>
+        <div class="stat-label">افزایش نرخ تبدیل</div>
+      </div>
+      <div class="stat-box sr sr-scale" data-d="3">
+        <div><span class="stat-num" id="st4">0</span><span class="stat-suf">h</span></div>
+        <div class="stat-label">زمان شروع پروژه</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner sr sr-up">
+      <h2>آماده‌اید شروع کنیم؟</h2>
+      <p>یک جلسه مشاوره رایگان با تیم ریمکد. درباره پروژه‌تان صحبت می‌کنیم و نقشه راه می‌سازیم. بدون تعهد، با ارزش واقعی.</p>
+      <div class="cta-actions">
+        <button class="btn btn-primary" onclick="goToSite('home.html#contact')" style="font-size:.97rem;padding:.9rem 2.2rem">
+          مشاوره رایگان ←
+        </button>
+        <button class="btn btn-ghost" onclick="goToSite('home.html')">
+          مشاهده سایت کامل
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT STRIP ══ -->
+<section class="contact-strip">
+  <div class="container">
+    <div class="contact-strip-inner">
+      <a href="tel:09334095636" class="clink">
+        <span class="clink-icon">📞</span>
+        <div><small>تماس · ۹ تا ۲۰</small>09334095636</div>
+      </a>
+      <a href="mailto:rimcode.dev@gmail.com" class="clink">
+        <span class="clink-icon">✉</span>
+        <div><small>ایمیل</small>rimcode.dev@gmail.com</div>
+      </a>
+      <a href="https://t.me/09334095636" target="_blank" class="clink">
+        <span class="clink-icon">✈</span>
+        <div><small>تلگرام و بله</small>09334095636</div>
+      </a>
+      <a href="https://www.instagram.com/rimcode_dev" target="_blank" class="clink">
+        <span class="clink-icon">📸</span>
+        <div><small>اینستاگرام</small>@rimcode_dev</div>
+      </a>
+      <a href="https://github.com/rimcode-N8" target="_blank" class="clink">
+        <span class="clink-icon">🐙</span>
+        <div><small>GitHub</small>rimcode-N8</div>
+      </a>
+      <a href="https://rimcodejournal.blogix.ir/" target="_blank" class="clink">
+        <span class="clink-icon">📝</span>
+        <div><small>مجله ریمکد</small>rimcodejournal.blogix.ir</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>ریمکد | Rimcode – تمامی حقوق محفوظ است.</p>
+    <p>"ساخته شده با عشق, احترام و لبخند:)"</p>
+  <span class="footer-tag">We Code Your Growth</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+/* ── Cursor glow ── */
+const cg = document.getElementById('cglow');
+if(window.matchMedia('(hover:hover)').matches){
+  document.addEventListener('mousemove',e=>{
+    cg.style.left=e.clientX+'px';
+    cg.style.top=e.clientY+'px';
+  },{passive:true});
+} else { cg.style.display='none'; }
+
+/* ── Particle canvas ── */
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+let W,H,particles=[],mouse={x:-9999,y:-9999};
+function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+resize();
+window.addEventListener('resize',resize,{passive:true});
+function P(){ this.x=Math.random()*W; this.y=Math.random()*H; this.vx=(Math.random()-.5)*.4; this.vy=(Math.random()-.5)*.4; this.r=Math.random()*1.4+.4; this.a=Math.random()*.45+.15; }
+P.prototype.update=function(){ this.x+=this.vx; this.y+=this.vy; if(this.x<0||this.x>W)this.vx*=-1; if(this.y<0||this.y>H)this.vy*=-1; };
+for(let i=0;i<80;i++) particles.push(new P());
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  for(let i=0;i<particles.length;i++){
+    const p=particles[i];
+    for(let j=i+1;j<particles.length;j++){
+      const q=particles[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<130){ ctx.beginPath(); ctx.strokeStyle='rgba(249,115,22,'+(0.25*(1-d/130))+')'; ctx.lineWidth=.6; ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke(); }
+    }
+    const mx=p.x-mouse.x,my=p.y-mouse.y,md=Math.sqrt(mx*mx+my*my);
+    if(md<180){ ctx.beginPath(); ctx.strokeStyle='rgba(249,115,22,'+(0.5*(1-md/180))+')'; ctx.lineWidth=1.1; ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y); ctx.stroke(); }
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(249,115,22,'+p.a+')'; ctx.fill();
+    p.update();
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+document.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY;},{passive:true});
+
+/* ── Header scroll ── */
+const hdr=document.getElementById('header');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+
+/* ── Scroll progress ── */
+const spBar=document.getElementById('scrollProgress');
+window.addEventListener('scroll',()=>{
+  const doc=document.documentElement;
+  const pct=window.scrollY/(doc.scrollHeight-doc.clientHeight);
+  spBar.style.transform='scaleX('+Math.min(pct,1)+')';
+},{passive:true});
+
+/* ── SR (scroll reveal) ── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
+
+/* ── Count-up ── */
+function countUp(el,target,suffix,dur){
+  const start=performance.now();
+  (function tick(now){
+    const p=Math.min((now-start)/dur,1);
+    const e=1-Math.pow(1-p,4);
+    el.textContent=Math.round(e*target)+(suffix||'');
+    if(p<1) requestAnimationFrame(tick);
+  })(start);
+}
+const cntObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const id=e.target.id;
+    if(id==='s1'||id==='st1') countUp(e.target,120,'+',1800);
+    else if(id==='s2'||id==='st2') countUp(e.target,98,'٪',2000);
+    else if(id==='s3'||id==='st3') countUp(e.target,5,'+',1400);
+    else if(id==='st4') countUp(e.target,48,'',1600);
+    cntObs.unobserve(e.target);
+  });
+},{threshold:.5});
+['s1','s2','s3','st1','st2','st3','st4'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el) cntObs.observe(el);
+});
+
+/* ── Glitch ── */
+const tg=document.getElementById('titleGrad');
+setInterval(()=>{ tg.classList.add('glitch'); setTimeout(()=>tg.classList.remove('glitch'),350); },4500);
+
+/* ── Magnetic enter btn ── */
+const btnE=document.getElementById('btnEnter');
+if(btnE){
+  btnE.addEventListener('mousemove',e=>{
+    const r=btnE.getBoundingClientRect();
+    const x=(e.clientX-r.left-r.width/2)*.25;
+    const y=(e.clientY-r.top-r.height/2)*.25;
+    btnE.style.transform='translate('+x+'px,'+y+'px)';
+  });
+  btnE.addEventListener('mouseleave',()=>{ btnE.style.transform=''; });
+}
+
+/* ── Ripple ── */
+document.querySelectorAll('.btn-enter,[class*=btn-primary]').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    const r=this.getBoundingClientRect();
+    const s=Math.max(r.width,r.height);
+    const rip=document.createElement('span');
+    rip.className='ripple';
+    rip.style.cssText='width:'+s+'px;height:'+s+'px;left:'+(e.clientX-r.left-s/2)+'px;top:'+(e.clientY-r.top-s/2)+'px';
+    this.appendChild(rip);
+    setTimeout(()=>rip.remove(),650);
+  });
+});
+
+/* ── Go to site ── */
+function goToSite(url){
+  document.getElementById('curtain').classList.add('closing');
+  setTimeout(()=>{ window.location.href=url; },680);
+}
+window.goToSite=goToSite;
+if(btnE) btnE.addEventListener('click',()=>goToSite('home.html'));
+document.addEventListener('keydown',e=>{ if(e.key==='Enter') goToSite('home.html'); });
+
+/* ── Marquee pause ── */
+const mi=document.querySelector('.marquee-inner');
+document.querySelector('.marquee-section')?.addEventListener('mouseenter',()=>mi.style.animationPlayState='paused');
+document.querySelector('.marquee-section')?.addEventListener('mouseleave',()=>mi.style.animationPlayState='running');
+
+/* ── Year ── */
+document.getElementById('year').textContent=new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="images/mylogo.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>۴۰۴ — صفحه پیدا نشد | ریمکد</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.003/fonts/web/Vazirmatn-FD.css" rel="stylesheet">
+<style>
+:root{--bg:#060810;--orange:#f97316;--amber:#f59e0b;--white:#f8fafc;--muted:#64748b;--ease:cubic-bezier(0.34,1.56,0.64,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%}
+body{font-family:'Vazirmatn FD',system-ui,sans-serif;background:var(--bg);color:var(--white);display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:hidden;-webkit-font-smoothing:antialiased}
+
+/* BG */
+.bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(249,115,22,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(249,115,22,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 20%,transparent 70%);pointer-events:none}
+.orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none}
+.orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(249,115,22,.08),transparent 70%);top:-20%;left:10%}
+.orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(249,115,22,.06),transparent 70%);bottom:-10%;right:5%}
+
+/* Content */
+.wrap{position:relative;z-index:1;text-align:center;padding:2rem;max-width:580px}
+
+/* 404 big */
+.num{
+  font-size:clamp(7rem,20vw,14rem);
+  font-weight:900;letter-spacing:-.06em;line-height:1;
+  background:linear-gradient(120deg,var(--orange),var(--amber),#fb923c);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:float 4s ease-in-out infinite;
+  margin-bottom:.5rem;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+
+/* glitch on 4 */
+.num{position:relative}
+.num::before,.num::after{
+  content:'404';
+  position:absolute;top:0;right:0;left:0;
+  background:linear-gradient(120deg,var(--orange),var(--amber));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.num::before{animation:g1 4s 2s infinite}
+.num::after{animation:g2 4s 2.1s infinite}
+@keyframes g1{0%,95%,100%{clip-path:none;transform:none}96%{clip-path:inset(0 0 85% 0);transform:translateX(-4px)}98%{clip-path:inset(50% 0 40% 0);transform:translateX(4px)}}
+@keyframes g2{0%,95%,100%{clip-path:none;transform:none}97%{clip-path:inset(70% 0 10% 0);transform:translateX(4px)}99%{clip-path:inset(20% 0 70% 0);transform:translateX(-4px)}}
+
+.logo{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:2rem;opacity:.7;animation:rise .7s .1s both}
+.logo img{width:36px;height:36px;object-fit:contain}
+.logo span{font-weight:900;font-size:1rem;color:var(--white)}
+.logo span em{color:var(--orange);font-style:normal}
+
+h1{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:.7rem;letter-spacing:-.02em;animation:rise .7s .2s both}
+p{color:var(--muted);font-size:.95rem;line-height:1.75;margin-bottom:2.5rem;animation:rise .7s .3s both}
+
+.actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;animation:rise .7s .4s both}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;border-radius:999px;font-weight:700;font-size:.9rem;font-family:inherit;cursor:pointer;border:none;text-decoration:none;transition:transform .2s var(--ease),box-shadow .2s}
+.btn-primary{background:linear-gradient(135deg,var(--orange),var(--amber));color:#fff;box-shadow:0 8px 24px rgba(249,115,22,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(249,115,22,.4)}
+.btn-ghost{background:transparent;color:var(--muted);border:1.5px solid rgba(255,255,255,.1)}
+.btn-ghost:hover{border-color:rgba(249,115,22,.3);color:var(--white);transform:translateY(-2px)}
+
+/* breadcrumb hint */
+.hint{margin-top:3rem;font-size:.75rem;color:rgba(255,255,255,.15);animation:rise .7s .6s both;letter-spacing:.05em}
+.hint a{color:rgba(249,115,22,.5);transition:color .2s}
+.hint a:hover{color:var(--orange)}
+
+/* countdown */
+.countdown{font-size:.78rem;color:var(--muted);margin-top:1rem;animation:rise .7s .5s both}
+.countdown span{color:var(--orange);font-weight:700}
+
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:480px){
+  .actions{flex-direction:column;align-items:center}
+  .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<div class="wrap">
+  <a href="home.html" class="logo">
+    <img src="images/mylogo.png" alt="RimCode" onerror="this.style.display='none'">
+    <span>Rim<em>Code</em></span>
+  </a>
+
+  <div class="num">404</div>
+
+  <h1>این صفحه وجود ندارد!</h1>
+  <p>
+    صفحه‌ای که دنبالش می‌گردی پیدا نشد. شاید آدرس اشتباهه،
+    یا صفحه جابجا شده. نگران نباش — از اینجا برمی‌گردیم.
+  </p>
+
+  <div class="actions">
+    <a href="home.html" class="btn btn-primary">🏠 برگشت به صفحه اصلی</a>
+    <a href="home.html#contact" class="btn btn-ghost">📞 تماس با ما</a>
+  </div>
+
+  <div class="countdown">
+    <span id="auto-redirect"></span>
+  </div>
+
+  <div class="hint">
+    <a href="home.html">صفحه اصلی</a> ·
+    <a href="home.html#services">خدمات</a> ·
+    <a href="team.html">تیم ما</a> ·
+    <a href="home.html#contact">تماس</a> ·
+    <a href="https://rimcodejournal.blogix.ir/" target="_blank">مجله</a>
+  </div>
+</div>
+
+<script>
+// Auto redirect countdown
+let secs = 10;
+const el = document.getElementById('auto-redirect');
+function tick(){
+  el.innerHTML = 'انتقال خودکار به صفحه اصلی در <span>' + secs + '</span> ثانیه';
+  if(secs <= 0){ window.location.href = 'index.html'; return; }
+  secs--;
+  setTimeout(tick, 1000);
+}
+tick();
+</script>
+</body>
+</html>
